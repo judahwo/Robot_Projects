@@ -59,19 +59,27 @@ def interpolate_angles(start_angles, end_angles, steps):
     return np.linspace(start_angles, end_angles, steps)
 
 # Define joint angles for each pose
-pose1_angles = np.array([0, 0, 0, 0])
-pose2_angles = np.array([np.pi/4, np.pi/4, np.pi/4, np.pi/4])
-pose3_angles = np.array([np.pi/2, np.pi/2, np.pi/2, np.pi/2])
+pose1_angles = np.array([0, 1.9204, -0.8430, -1.508])
+pose2_angles = np.array([1.5, 1.9204, -0.8430, -1.508])
+pose3_angles = np.array([1.5, 1.1204, -1.2430, -1.508])
+pose4_angles = np.array([1.5, 1.5204, -0.8430, -1.508])
+pose5_angles = np.array([-1.5, 1.5204, -0.8430, -1.508])
+pose6_angles = np.array([-1.5, 1.1204, -1.2430, -1.508])
+pose7_angles = np.array([0, 1.9204, -0.8430, -1.508])
 
 # Define the number of steps for interpolation
-steps = 100
+steps = 30
 
 # Interpolate between poses
 path1 = interpolate_angles(pose1_angles, pose2_angles, steps)
 path2 = interpolate_angles(pose2_angles, pose3_angles, steps)
+path3 = interpolate_angles(pose3_angles, pose4_angles, steps)
+path4 = interpolate_angles(pose4_angles, pose5_angles, steps)
+path5 = interpolate_angles(pose5_angles, pose6_angles, steps)
+path6 = interpolate_angles(pose6_angles, pose7_angles, steps)
 
 # Combine paths
-path = np.concatenate((path1, path2), axis=0)
+path = np.concatenate((path1, path2, path3, path4, path5, path6), axis=0)
 
 # Animation setup
 fig = plt.figure()
