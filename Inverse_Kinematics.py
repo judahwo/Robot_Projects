@@ -4,8 +4,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 
-
-
 # Global Variables
 # Link Lengths
 L1, L2, L3, L4 = 10, 10, 10, 10
