@@ -24,11 +24,6 @@ t4 = -1.508
 #   Main function, receives link lengths and joint angles, returns joint and end effector positions
 def forward_kinematics_4R(t1, t2, t3, t4, L1, L2, L3, L4):
 
-    # Convert angles from degrees to radians
-    # t1 = np.radians(t1)
-    # t2 = np.radians(t2)
-    # t3 = np.radians(t3)
-
     # Frame to frame transformation matrices
     T01 = np.array([[np.cos(t1), 0, np.sin(t1), 0],
                    [np.sin(t1), 0, -np.cos(t1), 0],
