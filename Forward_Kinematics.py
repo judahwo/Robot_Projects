@@ -4,7 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 # from mpl_toolkits.mplot3d import Axes3Dh
 
-# This program employs forward kinematics for a 3R Robot in 3D
+# This program employs forward kinematics for a 4R Robot in 3D
 # The function, forward_kinematics_4R, is passed link lengths and joint angles, and returns joint and end effectors
 # positions. The program plots the links, joint and end effector positions.
 
