@@ -81,23 +81,15 @@ path6 = interpolate_angles(pose6_angles, pose7_angles, steps)
 # Combine paths
 path = np.concatenate((path1, path2, path3, path4, path5, path6), axis=0)
 
-# Animation setup
+# Animation plot setup
 fig = plt.figure()
 ax = fig.add_subplot(111, projection='3d')
-ax.set_xlabel('X')
-ax.set_ylabel('Y')
-ax.set_zlabel('Z')
-ax.set_xlim([-50, 200])
-ax.set_ylim([-200, 200])
-ax.set_zlim([-10, 300])
 
 # Set the initial viewing position
 ax.view_init(elev=25, azim=-45)
 
-# Adjust the height and width of the viewing window
+# Adjust the height, width, and aspect ratio of the viewing window
 ax.set_box_aspect([1, 1, 0.7])  # Set the aspect ratio of the plot
-
-# Adjust the height and width of the window in which the plot is displayed
 fig.subplots_adjust(left=0.1, right=0.9, bottom=0.1, top=0.9)  # Adjust the margins of the plot
 fig.set_size_inches(8, 8)  # Set the size of the window in inches
 
@@ -106,10 +98,12 @@ for angles in path:
     t1, t2, t3, t4 = angles
     posee, pos1, pos2, pos3, pos4 = forward_kinematics_4R(t1, t2, t3, t4, L1, L2, L3, L4, L5)
 
+    # Titles, labels, and limits
     ax.clear()
-    ax.set_xlabel('X')
-    ax.set_ylabel('Y')
-    ax.set_zlabel('Z')
+    ax.set_xlabel('X-Axi (mm)')
+    ax.set_ylabel('Y-Axis (mm))')
+    ax.set_zlabel('Z-Axis (mm)')
+    ax.set_title('4R Forward Kinematics')
     ax.set_xlim([-200, 200])
     ax.set_ylim([-200, 200])
     ax.set_zlim([-10, 200])
