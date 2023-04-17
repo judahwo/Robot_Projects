@@ -110,7 +110,7 @@ fig.set_size_inches(8, 8)  # Set the size of the window in inches
 ax.set_xlabel('X Axis')
 ax.set_ylabel('Y Axis')
 ax.set_zlabel('Z Axis')
-ax.set_title('3R Forward Kinematics')
+ax.set_title('4R Forward Kinematics')
 
 # Set the boundaries of the graph
 ax.set_xlim([-50, 200])
