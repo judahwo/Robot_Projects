@@ -22,7 +22,7 @@ t3 = -0.8430
 t4 = -1.508
 
 #   Main function, receives link lengths and joint angles, returns joint and end effector positions
-def forward_kinematics_3R(t1, t2, t3, t4, L1, L2, L3, L4):
+def forward_kinematics_4R(t1, t2, t3, t4, L1, L2, L3, L4):
 
     # Convert angles from degrees to radians
     # t1 = np.radians(t1)
@@ -71,7 +71,7 @@ def forward_kinematics_3R(t1, t2, t3, t4, L1, L2, L3, L4):
     return posee, pos1, pos2, pos3, pos4
 
 # Compute the forward kinematics of the robot
-posee, pos1, pos2, pos3, pos4 = forward_kinematics_3R(t1, t2, t3, t4, L1, L2, L3, L4)
+posee, pos1, pos2, pos3, pos4 = forward_kinematics_4R(t1, t2, t3, t4, L1, L2, L3, L4)
 
 # Establishes plot and plots EE position
 fig = plt.figure()
