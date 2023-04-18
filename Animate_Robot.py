@@ -8,7 +8,7 @@ L1 = 25
 L2 = 100
 L3 = 95
 L4 = 80
-L5 = 10
+L5 = 25
 
 # Your given function
 def forward_kinematics_4R(t1, t2, t3, t4, L1, L2, L3, L4, L5):
@@ -59,13 +59,13 @@ def interpolate_angles(start_angles, end_angles, steps):
     return np.linspace(start_angles, end_angles, steps)
 
 # Define joint angles for each pose
-pose1_angles = np.array([0, 1.9204, -0.8430, -1.508])
-pose2_angles = np.array([1.5, 1.9204, -0.8430, -1.508])
+pose1_angles = np.array([0, 2.1204, -0.8430, -1.508])
+pose2_angles = np.array([1.5, 2.1204, -0.8430, -1.508])
 pose3_angles = np.array([1.5, 1.1204, -1.2430, -1.508])
 pose4_angles = np.array([1.5, 1.5204, -0.8430, -1.508])
 pose5_angles = np.array([-1.5, 1.5204, -0.8430, -1.508])
 pose6_angles = np.array([-1.5, 1.1204, -1.2430, -1.508])
-pose7_angles = np.array([0, 1.9204, -0.8430, -1.508])
+pose7_angles = np.array([0, 2.1204, -0.8430, -1.508])
 
 # Define the number of steps for interpolation
 steps = 30
@@ -106,12 +106,15 @@ for angles in path:
     ax.set_title('4R Forward Kinematics')
     ax.set_xlim([-200, 200])
     ax.set_ylim([-200, 200])
-    ax.set_zlim([-10, 200])
+    ax.set_zlim([-10, 300])
 
     # Plot the arm's links
     ax.plot([0, pos1[0], pos2[0], pos3[0], pos4[0], posee[0]],
             [0, pos1[1], pos2[1], pos3[1], pos4[1], posee[1]],
-            [0, pos1[2], pos2[2], pos3[2], pos4[2], posee[2]], 'o-')
+            [0, pos1[2], pos2[2], pos3[2], pos4[2], posee[2]], 
+             linestyle='-', marker='o', markersize=10,
+             markerfacecolor='red', markeredgecolor='black',
+             linewidth=6, markeredgewidth=1, color='black')
 
     plt.draw()
     plt.pause(0.01)
