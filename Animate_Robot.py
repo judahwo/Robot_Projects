@@ -110,7 +110,7 @@ for angles in path:
     ax.set_ylim([-200, 200])
     ax.set_zlim([-10, 300])
 
-    # Plot the arm's links
+    # Plot/Animate the arm's links
     ax.plot([0, pos1[0], pos2[0], pos3[0], pos4[0], posee[0]],
             [0, pos1[1], pos2[1], pos3[1], pos4[1], posee[1]],
             [0, pos1[2], pos2[2], pos3[2], pos4[2], posee[2]], 
